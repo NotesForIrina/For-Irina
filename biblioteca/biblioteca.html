@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="biblioteca.css">
+    <title>Biblioteca | Intercambio</title>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html" class="back-btn" style="position: fixed; top: 20px; right: 20px; color: #888; text-decoration: none; text-transform: uppercase; font-size: 12px; z-index: 10;">← Volver</a>
+    </nav>
+    
+    <!-- El resto de tu código de biblioteca aquí -->
+</body>
+<body>
+
+    <header class="library-header">
+        <h1>Biblioteca Compartida</h1>
+        <p>Un espacio para nuestras lecturas y descubrimientos.</p>
+    </header>
+
+    <main class="page-content">
+        
+        <!-- SECCIÓN 1: RECOMENDACIONES DE IRINA -->
+        <section class="book-shelf">
+            <h2 class="shelf-title">Recomendaciones de Irina (Leyendo)</h2>
+            <div class="scroll-wrapper">
+
+                <!-- BLOQUE DE LIBRO (Copia desde aquí) -->
+                <div class="card" style="--bg-img: url('https://www.penguin.co.uk/_next/image?url=https%3A%2F%2Fcdn.penguin.co.uk%2Fdam-assets%2Fbooks%2F9781784700928%2F9781784700928-jacket-large.jpg&w=379&q=100');">
+                    <div class="content">
+                        <!-- Quita la etiqueta 'status-check' si aún no lo has terminado -->
+                        <div class="">Leyendo</div> 
+                        
+                        <h2 class="title">The Snowman - Jo Nesbo</h2>
+                        <p class="copy">Policial recomendado por Irina.</p>
+                        
+                        <!-- Barra de progreso: ajusta el width en el estilo y el número en el texto -->
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 03%;"></div>
+                            <span class="progress-text">03% leído</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- FIN BLOQUE DE LIBRO -->
+
+                <!-- Ejemplo de libro sin terminar -->
+                <!-- Ejemplo de libro sin terminar -->
+<div class="card" style="background-image: url('../assets/portadas/mountain.jpg');">
+    <div class="content">
+        <h2 class="title">The Mountain Between Us</h2>
+        <p class="copy">¿La novela favorita de Irina?</p>
+        
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 5%;"></div>
+            <span class="progress-text">5% leído</span>
+        </div>
+    </div> <!-- Cierre de content -->
+</div> <!-- Cierre de card -->
+        </section>
+
+        <hr class="shelf-divider">
+
+        <!-- SECCIÓN 2: MIS RECOMENDACIONES -->
+<section class="book-shelf">
+    <h2 class="shelf-title">Recomendaciones de Diego para Irina</h2>
+    <div class="scroll-wrapper">
+
+        <!-- LIBRO 1: CÉLINE -->
+        <div class="card" style="background-image: url('../assets/portadas/celine.jpg');">
+            <div class="content">
+                <h2 class="title">Viaje al Fin de la Noche</h2>
+                <p class="copy">Autor: Louis-Ferdinand Céline</p>
+                <p class="copy">Una de mis novelas favoritas.</p>
+                
+            </div>
+        </div>
+
+        <!-- LIBRO 2: DOSTOYEVSKY (Ejemplo para que copies la estructura) -->
+        <div class="card" style="background-image: url('../assets/portadas/noches-blancas.jpg');">
+            <div class="content">
+                <h2 class="title">Noches Blancas</h2>
+                <p class="copy">Autor: Fiodor Dostoyevsky</p>
+                <p class="copy">Para leer en una noche estrellada.</p>
+                <button class="btn">Leer más</button>
+            </div>
+        </div>
+
+    </div> <!-- Fin scroll-wrapper -->
+</section> <!-- Fin book-shelf -->
+
+    </main>
+
+</body>
+</html>

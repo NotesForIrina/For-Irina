@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Playfair+Display:ital@1&display=swap');
+
+body {
+    margin: 0;
+    background-color: #0c0c0c;
+    color: #f4ecd8;
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 100vh;
+}
+
+/* IMAGEN LATERAL: Una estatua antigua o un cielo estrellado vintage */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 35%; height: 100%;
+    background-image: url('../assets/citas-background.avif');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    filter: sepia(0.3) contrast(1.1);
+    z-index: 1;
+}
+
+.quotes-wrapper {
+    width: 60%;
+    padding: 80px 60px;
+    z-index: 2;
+}
+
+.quotes-header {
+    margin-bottom: 60px;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-style: italic;
+    color: #d4a373; /* Tono bronce/atardecer */
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* ESTILO DE CADA CITA */
+.quote-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid #d4a373;
+    padding: 40px;
+    margin-bottom: 50px;
+    transition: all 0.4s ease;
+    animation: fadeIn 1.5s ease;
+}
+
+.quote-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(10px);
+}
+
+.quote-text {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.quote-author {
+    text-align: right;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d4a373;
+}
+
+.quote-author cite {
+    color: #f4ecd8;
+    font-style: normal;
+    opacity: 0.7;
+}
+
+/* BOTÓN VOLVER */
+.back-btn {
+    position: fixed;
+    top: 30px; 
+    right: 40px;
+    text-decoration: none;
+    color: #d4a373;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 9999;
+    padding: 10px 15px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 4px;
+}
+
+.back-btn:hover {
+    color: #fff;
+    background: rgba(212, 163, 115, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

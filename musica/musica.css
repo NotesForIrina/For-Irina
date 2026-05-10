@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap");
+
+:root {
+    --luz-estanteria: rgba(244, 236, 216, 0.2); /* Color de la bombilla */
+    --brillo-haz: rgba(244, 236, 216, 0.07);   /* El haz de luz que baja */
+    --texto-papel: #f4ecd8;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: hidden;
+}
+
+/* FOTO LATERAL */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    background-image: url('../assets/musica-background.avif');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    z-index: 1;
+}
+
+.main-wrapper {
+    width: 60%;
+    padding: 60px 40px;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px; /* Reducido para que la luz esté cerca */
+    color: var(--texto-papel);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   NUEVA BARRA DE LUCES DE MOSTRADOR
+   ============================================================ */
+.shelf-light {
+    width: 100%;
+    height: 4px;
+    background: #111; /* La regleta física */
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: -15px; /* Superpone un poco el haz sobre los discos */
+    box-shadow: 0 2px 5px rgba(0,0,0,1);
+    z-index: 4;
+}
+
+/* El haz de luz proyectado hacia abajo */
+.shelf-light::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Qué tanto baja la luz */
+    background: linear-gradient(to bottom, var(--brillo-haz), transparent);
+    pointer-events: none;
+}
+
+/* Pequeños focos brillantes en la regleta */
+.shelf-light::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Crea puntos de luz cada 120px */
+    background: radial-gradient(circle, var(--luz-estanteria) 0%, transparent 70%);
+    background-size: 145px 4px; 
+}
+
+/* ============================================================
+   ESTANTERÍA Y DISCOS
+   ============================================================ */
+.grid-container {
+    display: flex;
+    gap: 25px;
+    padding: 40px 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.grid-container::-webkit-scrollbar { height: 4px; }
+.grid-container::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+.music-square {
+    flex: 0 0 120px;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+    position: relative;
+    overflow: visible; 
+    display: block;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.music-square:hover {
+    transform: scale(1.1) translateY(-10px);
+    z-index: 10;
+    border-color: rgba(244, 236, 216, 0.3);
+    /* Luz trasera al levantar el disco */
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(244, 236, 216, 0.1);
+}
+
+/* Reflejo acrílico */
+.music-square::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.square-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 3;
+    backdrop-filter: blur(2px);
+}
+
+.music-square:hover .square-overlay { opacity: 1; }
+
+.square-overlay span {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, #333, transparent);
+    margin: 40px 0;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #888;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    z-index: 10;
+}

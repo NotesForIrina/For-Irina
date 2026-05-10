@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+body {
+    margin: 0;
+    background-color: #1a1512; /* Color madera oscura */
+    background-image: url('../assets/fichero-background.avif');
+    color: #d4a373;
+    font-family: 'Special Elite', typewriter, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.fichero-container {
+    width: 90%;
+    max-width: 600px;
+    background: #2c241e;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8), 0 20px 40px rgba(0,0,0,0.5);
+    border: 2px solid #3d3128;
+}
+
+.fichero-header {
+    text-align: center;
+    border-bottom: 2px solid #3d3128;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.fichero-title { font-size: 2rem; letter-spacing: 4px; text-transform: uppercase; }
+
+.drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zettel-tab {
+    background: #c2b280; /* Color carpeta Manila */
+    color: #2c241e;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2px 20px 2px 2px; /* Simula la pestaña de carpeta */
+    transition: all 0.3s ease;
+    border-bottom: 3px solid #a3956a;
+    font-weight: bold;
+}
+
+.zettel-tab:hover {
+    transform: translateX(10px) scale(1.02);
+    background: #d4c59a;
+}
+
+.folder-id { opacity: 0.6; font-size: 0.8rem; }
+
+.back-btn {
+    position: fixed;
+    top: 30px; right: 40px;
+    color: #c2b280;
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    z-index: 100;
+}

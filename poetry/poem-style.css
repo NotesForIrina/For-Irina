@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Playfair+Display:ital@1&display=swap');
+
+body {
+    margin: 0;
+    background-color: #0c0c0c; /* Negro profundo igual al índice */
+    color: #f4ecd8; /* Color crema/otoñal para las letras */
+    font-family: 'Cormorant Garamond', serif;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* IMAGEN LATERAL CON ESTILO OTOÑAL / VINTAGE */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 38%; height: 100%;
+    background-image:  url('../assets/jardin.avif');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* Opacidad tenue para no distraer */
+    filter: sepia(0.4) contrast(1.1); /* Efecto vintage/otoñal */
+    mask-image: linear-gradient(to right, black 75%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
+    z-index: 1;
+}
+
+.poem-container {
+    width: 55%;
+    padding: 100px 60px;
+    z-index: 2;
+    animation: fadeIn 2s ease;
+}
+
+.poem-number {
+    font-family: sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.poem-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-style: italic;
+    color: #d4a373; /* Tono bronce/atardecer */
+    margin-bottom: 50px;
+}
+
+.poem-content pre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    color: #f4ecd8;
+    /* Efecto de "página de libro" */
+    border-left: 1px solid rgba(212, 163, 115, 0.3);
+    padding-left: 35px;
+}
+
+.poem-footer {
+    margin-top: 80px;
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.4;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    position: fixed;
+    top: 30px; right: 40px;
+    text-decoration: none;
+    color: #d4a373;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.back-link:hover {
+    color: #fff;
+    letter-spacing: 3px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
