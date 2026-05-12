@@ -3,7 +3,7 @@
 body {
     margin: 0;
     background-color: #1a1512; /* Color madera oscura */
-    background-image: url('../assets/fichero-background.avif');
+    background-image: url('https://images.unsplash.com/photo-1644907346664-e3ed2ab57eab?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     color: #d4a373;
     font-family: 'Special Elite', typewriter, serif;
     display: flex;
