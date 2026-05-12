@@ -1,135 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Texto de presentación -->
-<header class="intro-section">
-  <h1 class="title">Ирина</h1>
-  <p class="intro-text">
-    Distance is to love what the wind is to fire: it extinguishes the small, but enlivens the great (Chufo Lloréns)
-  </p>
-  <p>The site is not yet finished and can possibly only be viewed on a computer.</p>
-</header>
-
-<!-- Tu contenedor de tarjetas actual -->
-<div class="container">
-  <!-- Aquí van tus .card-wrap -->
-</div>
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <title>Galeria</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'><link rel="stylesheet" href="./style.css">
+    <!-- Los enlaces a estilos siempre van en el head -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
 
-  </head>
-  <body>
-  <div class="clocks-container">
-    <div class="clock-box left">
-        <span class="location">Finlandia</span>
-        <span id="finland-time" class="time">00:00:00</span>
+    <!-- Pantalla de carga (Loader) -->
+    <div id="loader">
+        <div class="loader-content">
+            <p class="loader-text">Abriendo archivo...</p>
+            <div class="loader-line"></div>
+        </div>
     </div>
-    <div class="clock-box right">
-        <span class="location">Argentina</span>
-        <span id="argentina-time" class="time">00:00:00</span>
+
+    <!-- Relojes -->
+    <div class="clocks-container">
+        <div class="clock-box left">
+            <span class="location">Finlandia</span>
+            <span id="finland-time" class="time">00:00:00</span>
+        </div>
+        <div class="clock-box right">
+            <span class="location">Argentina</span>
+            <span id="argentina-time" class="time">00:00:00</span>
+        </div>
     </div>
-</div>
-  <!-- Pantalla de carga -->
-<div id="loader">
-    <div class="loader-content">
-        <p class="loader-text">Abriendo archivo...</p>
-        <div class="loader-line"></div>
+
+    <!-- Texto de presentación -->
+    <header class="intro-section">
+        <h1 class="title">Ирина</h1>
+        <p class="intro-text">
+            Distance is to love what the wind is to fire: it extinguishes the small, but enlivens the great (Chufo Lloréns)
+        </p>
+        <p>The site is not yet finished and can possibly only be viewed on a computer.</p>
+    </header>
+
+    <!-- Contenedor de la App -->
+    <div id="app" class="container">
+        <!-- Enlace a la carpeta de música -->
+        <a href="musica/index.html" style="text-decoration: none; cursor: pointer;">
+            <card data-image="assets/hovemusica.avif">
+                <h1 slot="header">Música</h1>
+                <p slot="content">La Música que me recomiendas, la música que te recomiendo-</p>
+            </card>
+        </a>
+
+        <a href="biblioteca/biblioteca.html" style="text-decoration: none; cursor: pointer;">
+            <card data-image="assets/hovebiblioteca.avif">
+                <h1 slot="header">Biblioteca</h1>
+                <p slot="content">Mi biblioteca virtual.<br/>¿Qué leo?</p>
+            </card>
+        </a>
+
+        <a href="cine/cine.html" style="text-decoration: none; cursor: pointer;">
+            <card data-image="assets/hovecine.avif">
+                <h1 slot="header">Cine</h1>
+                <p slot="content">Quizá, nuestras películas favoritas.</p>
+            </card>
+        </a>
+          
+        <!-- Enlace a la sección de Poesía -->
+        <a href="poetry/poetry.html" style="text-decoration: none; cursor: pointer;">
+            <card data-image="assets/hovepoetry.avif">
+                <h1 slot="header">Poetry</h1>
+                <p slot="content">Los poemas están aquí.</p>
+            </card>
+        </a>
+
+        <!-- Enlace a la sección de Citas -->
+        <a href="citas/citas.html" style="text-decoration: none; cursor: pointer;">
+            <card data-image="assets/hovecitas.avif">
+                <h1 slot="header">Citas</h1>
+                <p slot="content">Fragmentos de mis lecturas.</p>
+            </card>
+        </a>
+
+        <!-- Enlace a la sección de Fichas -->
+        <a href="fichas/fichas.html" style="text-decoration: none; cursor: pointer;">
+            <card data-image="assets/hovefichas.avif">
+                <h1 slot="header">Fichas</h1>
+                <p slot="content">Memorias fragmentadas al estilo Arno Schmidt.</p>
+            </card>
+        </a>
     </div>
-</div>
-  <div id="app" class="container">
-  <!-- Enlace a la carpeta de música -->
-<a href="musica/index.html" style="text-decoration: none; cursor: pointer;">
-  <card data-image="assets/hovemusica.avif">
-    <h1 slot="header">Música</h1>
-    <p slot="content">La Música que me recomiendas, la música que te recomiendo-</p>
-  </card>
-</a>
-  <a href="biblioteca/biblioteca.html" style="text-decoration: none; cursor: pointer;">
-  <card data-image="assets/hovebiblioteca.avif">
-    <h1 slot="header">Biblioteca</h1>
-    <p slot="content">Mi biblioteca virtual.<br/>¿Qué leo?</p>
-  </card>
-</a>
-<a href="cine/cine.html" style="text-decoration: none; cursor: pointer;">
-  <card data-image="assets/hovecine.avif">
-    <h1 slot="header">Cine</h1>
-    <p slot="content">Quizá, nuestras películas favoritas.</p>
-  </card>
-</a>
-  
-<!-- Enlace a la sección de Poesía -->
-<a href="poetry/poetry.html" style="text-decoration: none; cursor: pointer;">
-  <card data-image="assets/hovepoetry.avif">
-    <h1 slot="header">Poetry</h1>
-    <p slot="content">Los poemas están aquí.</p>
-  </card>
-</a>
-<!-- Enlace a la sección de Citas -->
-<a href="citas/citas.html" style="text-decoration: none; cursor: pointer;">
-  <card data-image="assets/hovecitas.avif">
-    <h1 slot="header">Citas</h1>
-    <p slot="content">Fragmentos de mis lecturas.</p>
-  </card>
-</a>
-<!-- Enlace a la sección de Fichas -->
-<a href="fichas/fichas.html" style="text-decoration: none; cursor: pointer;">
-  <card data-image="assets/hovefichas.avif">
-    <h1 slot="header">Fichas</h1>
-    <p slot="content">Memorias fragmentadas al estilo Arno Schmidt.</p>
-  </card>
-</a>
-</div>
 
-<h1 class="title">For you, with ❤.</h1>
+    <h1 class="title">For you, with ❤.</h1>
 
+    <!-- Scripts -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+    <script src="./script.js"></script>
 
+    <script>
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.classList.add("loader-hidden");
+            }, 500);
+        });
+    </script>
 
-
-
-
-
-<!-- sm btns -->
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script><script  src="./script.js"></script>
-<script>
-    window.addEventListener("load", function() {
-        const loader = document.getElementById("loader");
-        
-        // Le damos un pequeño retraso de 500ms para que la transición sea suave
-        setTimeout(() => {
-            loader.classList.add("loader-hidden");
-        }, 500);
-    });
-</script>
-
-<script>
-    function updateClocks() {
-        const now = new Date();
-
-        // Opciones para Finlandia (Helsinki)
-        const optionsFin = { 
-            timeZone: 'Europe/Helsinki', 
-            hour: '2-digit', minute: '2-digit', second: '2-digit', 
-            hour12: false 
-        };
-        
-        // Opciones para Argentina (Buenos Aires)
-        const optionsArg = { 
-            timeZone: 'America/Argentina/Buenos_Aires', 
-            hour: '2-digit', minute: '2-digit', second: '2-digit', 
-            hour12: false 
-        };
-
-        document.getElementById('finland-time').textContent = now.toLocaleTimeString('es-AR', optionsFin);
-        document.getElementById('argentina-time').textContent = now.toLocaleTimeString('es-AR', optionsArg);
-    }
-
-    // Actualizar cada segundo
-    setInterval(updateClocks, 1000);
-    updateClocks(); // Llamada inicial para que no aparezca en 00:00:00
-</script>
-  </body>
-  
+    <script>
+        function updateClocks() {
+            const now = new Date();
+            const optionsFin = { 
+                timeZone: 'Europe/Helsinki', 
+                hour: '2-digit', minute: '2-digit', second: '2-digit', 
+                hour12: false 
+            };
+            const optionsArg = { 
+                timeZone: 'America/Argentina/Buenos_Aires', 
+                hour: '2-digit', minute: '2-digit', second: '2-digit', 
+                hour12: false 
+            };
+            document.getElementById('finland-time').textContent = now.toLocaleTimeString('es-AR', optionsFin);
+            document.getElementById('argentina-time').textContent = now.toLocaleTimeString('es-AR', optionsArg);
+        }
+        setInterval(updateClocks, 1000);
+        updateClocks();
+    </script>
+</body>
 </html>
